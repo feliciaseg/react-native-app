@@ -86,7 +86,7 @@ const HowToPlay = ({ navigation, route }) => {
 
       <TouchableOpacity
         style={stylesHTP.button}
-        onPress={() => navigation.navigate("StartScreen", { StartScreen })}
+        onPress={() => navigation.navigate("GamePlay", { GamePlay })}
       >
         <Text style={stylesHTP.buttonText}> Nu kör vi! </Text>
       </TouchableOpacity>
@@ -143,9 +143,16 @@ const GamePlay = ({ navigation, route }) => {
   return (
     <View style={stylesGP.container}>
       <View style={stylesGP.lyrics}>
-        <View style={stylesGP.lyric1} />
+        <View style={stylesGP.lyric1}>
+          <Text style= {stylesGP.textLyric1}>
+          I wonder how, I wonder why, yesterday you told me ‘bout the blue, blue sky
+          </Text>
+
+        </View>
         <View style={stylesGP.bar} />
-        <View style={stylesGP.lyric2} />
+        <View style={stylesGP.lyric2}>
+        <Text style= {stylesGP.textLyric2}> And all that I can see is just a yellow lemon tree</Text>
+        </View>
       </View>
       <View style={stylesGP.lower}>
         <View style={stylesGP.titleArtist}>
@@ -193,29 +200,44 @@ const stylesGP = StyleSheet.create({
   lyric1: {
     height: 229,
     width: "100%",
-    backgroundColor: "blue",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  textLyric1: {
+    color: "#E83844",
+    fontSize: 30,
+    textAlign: "center",
+    fontFamily: "OpenSans_800ExtraBold_Italic",
+    paddingTop: 20,
+    padding: 10,
   },
   bar: {
     height: 16,
     width: 250,
-    backgroundColor: "green",
+    backgroundColor: "white",
     borderRadius: 5,
   },
   lyric2: {
     height: 229,
     width: "100%",
-    backgroundColor: "red",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  textLyric2: {
+    color: "#E83844",
+    fontSize: 30,
+    textAlign: "center",
+    fontFamily: "OpenSans_800ExtraBold_Italic",
+    padding: 10,
   },
   lower: {
     height: 193,
     width: "100%",
     backgroundColor: "#1B62A8",
-    //bottom: 0,
   },
   titleArtist: {
     height: 97,
     width: "100%",
-    //backgroundColor: "white",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -231,7 +253,6 @@ const stylesGP = StyleSheet.create({
   },
   buttons: {
     height: 96,
-    //backgroundColor: "blue",
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center"
@@ -264,11 +285,11 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initalRouteName="GamePlay"
+        initalRouteName="HowToPlay"
         screenOptions={{ headerShown: false }}
       >
-        <Stack.Screen name="GamePlay" component={GamePlay} />
         <Stack.Screen name="HowToPlay" component={HowToPlay} />
+        <Stack.Screen name="GamePlay" component={GamePlay} />
         <Stack.Screen name="StartScreen" component={StartScreen} />
         {/* <Stack.Screen name = "ChangeScreen" component = {ChangeScreen}/>   */}
       </Stack.Navigator>
