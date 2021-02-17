@@ -30,7 +30,7 @@ export class GamePlay extends React.Component {
   };
 
   newSong = () => {
-    let randomize = Math.floor(Math.random() * 4) + 1;
+    let randomize = Math.floor(Math.random() * 3) + 1;
     let NewNumber = this.state.randomNumber + randomize
     if (NewNumber > songs.data.length-1){
       NewNumber = 0
