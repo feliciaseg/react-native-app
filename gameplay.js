@@ -6,16 +6,12 @@ export class GamePlay extends React.Component {
     super();
     this.state = {
       songs: songs.data,
-      randomNumber: 0,
+      randomNumber: Math.floor(Math.random() * songs.data.length) + 0, //random song
       gamesPlayed: 0,
       rightAnswersTeam1: 0,
       rightAnswersTeam2: 0,
       teamPlaying: 1, //1 for team1 and 2 for team 2
     };
-  }
-
-  componentDidMount() {
-    this.newSong();
   }
 
   wrongAnswer = () => {
@@ -31,24 +27,18 @@ export class GamePlay extends React.Component {
       this.setState({ rightAnswersTeam2: ++this.state.rightAnswersTeam2 });
     }
     this.updateScreen();
-    //console.log(this.state.rightAnswersTeam1);
   };
 
   newSong = () => {
-    console.log(
-      "Games played: " +
-        this.state.gamesPlayed +
-        "right answers 1 = " +
-        this.state.rightAnswersTeam1 +
-        "right answers 2 = " +
-        this.state.rightAnswersTeam2 +
-        "The team that is playing: " +
-        this.state.teamPlaying
-    );
-    let NewNumber = Math.floor(Math.random() * this.state.songs.length) + 0;
+    let randomize = Math.floor(Math.random() * 4) + 1;
+    let NewNumber = this.state.randomNumber + randomize
+    if (NewNumber > songs.data.length-1){
+      NewNumber = 0
+    }
     this.setState({
       randomNumber: NewNumber,
     });
+    console.log(NewNumber)
   };
 
   updateScreen = () => {
@@ -70,8 +60,10 @@ export class GamePlay extends React.Component {
           teamPlaying: 1,
         });
       }
-    } 
+      setTimeout(this.newSong, 1000)
+    } else {
       this.newSong();
+    }
   };
 
   render() {
@@ -135,7 +127,6 @@ const stylesGP = StyleSheet.create({
   lyrics: {
     height: 474,
     width: "100%",
-    //backgroundColor: "black"
     display: "flex",
     alignItems: "center",
   },
@@ -188,13 +179,13 @@ const stylesGP = StyleSheet.create({
     paddingTop: 5,
     color: "white",
     textAlign: "center",
-    fontSize: 30,
+    fontSize: 28,
     fontFamily: "OpenSans_800ExtraBold_Italic",
   },
   artist: {
     color: "white",
     textAlign: "center",
-    fontSize: 24,
+    fontSize: 22,
     fontFamily: "OpenSans_800ExtraBold_Italic",
   },
   buttons: {

@@ -1,6 +1,5 @@
 import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
-
 export class HowToPlay extends React.Component {
   render() {
     return (
