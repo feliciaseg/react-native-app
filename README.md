@@ -1,4 +1,6 @@
 ## Sing Sing
+![](mockup.png)
+
 
 Ett projekt skapat i React Native i kursen JavaScript fördjupning. Februari 2021. 
 Appen är starkt inspirerad av sällskapsspelet Sing Sing skapat av Ninja Print.
