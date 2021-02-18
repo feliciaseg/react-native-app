@@ -3,7 +3,7 @@
 Ett projekt skapat i React Native i kursen JavaScript fördjupning. Februari 2021. 
 Appen är starkt inspirerad av sällskapsspelet Sing Sing skapat av Ninja Print.
 
-#För utvecklare: 
+För utvecklare: 
 
 1. Se till att du har Node.js installerat (om inte, ladda ner det här: https://nodejs.org/en/download/)
 2. Installera Expo CLI genom att skriva "npm install -g expo-cli" i terminalen.
