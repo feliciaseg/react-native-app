@@ -35,6 +35,5 @@ const styles = StyleSheet.create({
     fontSize: 110,
     fontFamily: "OpenSans_800ExtraBold_Italic",
     color: "#1B62A8",
-    lineHeight: 0,
   },
 });

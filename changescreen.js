@@ -30,7 +30,6 @@ export class ChangeScreen extends React.Component {
   };
 
   render() {
-    //const team2answers = this.props.route.params.rightAnswersTeam2;
     return (
       <View style={stylesCS.container}>
         <TouchableOpacity
@@ -68,11 +67,8 @@ const stylesCS = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#E83844",
-    //height: "100%"
   },
   closeButton: {
-    //top: -100,
-    //left: -15,
     marginTop: 35,
     margin: 15,
     height: 51,
@@ -87,7 +83,6 @@ const stylesCS = StyleSheet.create({
     textAlign: "center",
     textAlignVertical: "center",
     fontWeight: "900",
-    //fontFamily: "OpenSans_800ExtraBold_Italic",
     color: "#1B62A8",
   },
   divButtonContainer: {

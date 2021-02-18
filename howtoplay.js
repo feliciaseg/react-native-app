@@ -26,6 +26,7 @@ export class HowToPlay extends React.Component {
         >
           <Text style={stylesHTP.buttonText}> Nu kör vi! </Text>
         </TouchableOpacity>
+      
       </View>
     );
   }

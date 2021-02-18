@@ -6,11 +6,11 @@ export class GamePlay extends React.Component {
     super();
     this.state = {
       songs: songs.data,
-      randomNumber: Math.floor(Math.random() * songs.data.length) + 0, //random song
-      gamesPlayed: 0,
-      rightAnswersTeam1: 0,
-      rightAnswersTeam2: 0,
-      teamPlaying: 1, //1 for team1 and 2 for team 2
+      randomNumber: Math.floor(Math.random() * songs.data.length) + 0, //generates random song
+      gamesPlayed: 0, //Number of games played per round
+      rightAnswersTeam1: 0, //points team 1
+      rightAnswersTeam2: 0, // points team 2
+      teamPlaying: 1, // 1 when team 1 is playing, 2 when team 2 is playing
     };
   }
 
@@ -67,8 +67,6 @@ export class GamePlay extends React.Component {
   };
 
   render() {
-    //const points1 = this.props.route.params.points1;
-    //const team1points = this.props.route.params.team1;
     return (
       <View style={stylesGP.container}>
         <View style={stylesGP.lyrics}>
